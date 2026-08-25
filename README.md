@@ -1,4 +1,4 @@
-# term-toggle
+# tool_term_toggle
 
 Standalone extraction from `workspace_archlinux_i3wm`.
 
