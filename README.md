@@ -35,7 +35,7 @@ term-toggle
 ## Configuration
 
 - Uses i3 window class `dropdown-term`.
-- Icon path defaults to `$HOME/.local/share/pixmaps/dropdown-term.png`.
+- Includes original project icon `share/pixmaps/dropdown-term.png`; `install.sh` installs it to `${XDG_DATA_HOME:-$HOME/.local/share}/pixmaps/dropdown-term.png`.
 
 ## Notes
 

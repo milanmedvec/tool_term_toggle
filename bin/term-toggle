@@ -7,7 +7,10 @@ if xdotool search --class "$class" >/dev/null 2>&1; then
     i3-msg "[class=\"$class\"] scratchpad show" >/dev/null
 else
     alacritty --class "$class" -e bash -c '
-        xseticon -id "$WINDOWID" "$HOME/.local/share/pixmaps/dropdown-term.png"
+        icon="${XDG_DATA_HOME:-$HOME/.local/share}/pixmaps/dropdown-term.png"
+        if [[ -n "${WINDOWID:-}" ]] && [[ -f "$icon" ]] && command -v xseticon >/dev/null 2>&1; then
+            xseticon -id "$WINDOWID" "$icon" 2>/dev/null || true
+        fi
         exec "$SHELL"
     ' &
 fi
