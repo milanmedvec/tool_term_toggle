@@ -1,10 +1,18 @@
 # tool_term_toggle
 
-Standalone extraction from `workspace_archlinux_i3wm`.
+Toggle an i3 scratchpad/dropdown Alacritty terminal.
 
-## Files
+## Commands
 
-- `bin/term-toggle` from workspace `bin/term-toggle`
+- `term-toggle` - show/hide a scratchpad terminal, creating it if needed
+
+## Dependencies
+
+- bash
+- i3-msg
+- xdotool
+- alacritty
+- xseticon (optional, for icons)
 
 ## Install
 
@@ -12,5 +20,23 @@ Standalone extraction from `workspace_archlinux_i3wm`.
 ./install.sh
 ```
 
-By default commands from `bin/` are installed to `$HOME/.local/bin`.
-Override with `PREFIX=/path ./install.sh`.
+Install to a custom prefix:
+
+```bash
+PREFIX="$HOME/.local" ./install.sh
+```
+
+## Usage
+
+```bash
+term-toggle
+```
+
+## Configuration
+
+- Uses i3 window class `dropdown-term`.
+- Icon path defaults to `$HOME/.local/share/pixmaps/dropdown-term.png`.
+
+## Notes
+
+These scripts were extracted from a personal Arch Linux + i3 workspace. Review dependencies and paths before using them on another machine.
