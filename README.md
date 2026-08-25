@@ -8,11 +8,26 @@ Toggle an i3 scratchpad/dropdown Alacritty terminal.
 
 ## Dependencies
 
-- bash
-- i3-msg
-- xdotool
-- alacritty
-- xseticon (optional, for icons)
+Required commands:
+- `bash`
+- `i3-msg`
+- `xdotool`
+- `alacritty`
+
+Optional commands:
+- `xseticon` - sets the dropdown terminal window icon
+
+Check required commands in your shell:
+
+```bash
+need() {
+    command -v "$1" >/dev/null || echo "missing: $1"
+}
+
+for cmd in bash i3-msg xdotool alacritty; do
+    need "$cmd"
+done
+```
 
 ## Install
 
